@@ -1,0 +1,17 @@
+Hi,
+
+what's mobility project?
+
+it's a demo app using phonegap framework and JQuery mobile which allow user to sync to an indicator and watch it evolve.
+
+The indicator is linked to a group and the app allow each member of a group to communicate with all other member of the same group via mail or chat.
+The indicator can be visualize with 3 different type of representation.
+
+How run the app?
+
+1 : clone the git repo located at https://github.com/messmk/Mobility
+2 : create a new phonegap project in eclipse and paste all the content of the zip archive expect server.js in the www folder located in the asset folder of the phonegap project
+3 : add phonegap.jar to the build path of the project
+4 : execute the server.js which is a node server using now.js (so install node and now : nodejs.org  , nowjs.com )
+5 : change the ip adress of the server in the index.html file by your localhost or your own server
+6 : launch the app in eclipse

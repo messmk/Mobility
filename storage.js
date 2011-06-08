@@ -15,7 +15,7 @@
 			now.mail = results.rows.item(0).data;
 		}
 		else{
-			navigator.notification.alert("Pensez a  enregistrer votre pseudo et mail dans le menu option");
+			navigator.notification.alert("Pensez a enregistrer votre pseudo et mail dans le menu option");
 		}	  
     }
 
