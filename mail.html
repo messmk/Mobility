@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    	<title>App PhoneGap</title>
+                    <link href="http://code.jquery.com/mobile/1.0a3/jquery.mobile-1.0a3.min.css" rel="stylesheet" type="text/css" />
+		<script src="http://code.jquery.com/jquery-1.5.min.js" type="text/javascript"></script>
+		<link href="http://code.jquery.com/jquery-1.5.min.js" rel="stylesheet" type="text/css" />
+		<script src="http://code.jquery.com/mobile/1.0a3/jquery.mobile-1.0a3.min.js" type="text/javascript"></script>
+         <script src="http://10.33.171.166:8080/nowjs/now.js"></script>    
+        <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+</head>
+<body>
+
+  
+        <div data-role="page" id="page">
+        		<div data-role="header">
+    				<h1>Mail</h1>
+    			</div>
+                <div data-role="fieldcontain">
+                    <label for="from">Depuis:</label>
+                    <input type="text" name="from" id="from" value="messmk@gmail.com"  />
+                </div>    
+                <div data-role="fieldcontain">                                
+                        <label for="to">A:</label>
+                        <input type="text" name="to" id="to" value="messmk@gmail.com"  />                    
+                </div> 
+                 <a href="listmail.html" data-role="button" onclick="now.getListMail(currentgroup);" >Liste Contact Group</a>
+                <div data-role="fieldcontain">
+                    <label for="sujet">Sujet:</label>
+                    <input type="text" name="sujet" id="sujet" value=""  />
+                </div>
+    			<div data-role="content">
+                        <div data-role="fieldcontain">                
+					        <textarea style="width:95%;height:40%" id = "txt" cols="250" rows="16" ></textarea>
+                        </div>
+				</div>
+                <div data-role="footer">
+    			    <h4>Identité</h4>
+			    </div>         
+                <div data-role="fieldcontain">
+                    <label for="id">Identifiant:</label>
+                    <input type="text" name="id" id="login" value="messmk@gmail.com"  />
+                </div>
+                <div data-role="fieldcontain">
+                    <label for="pwd">Mot de passe:</label>
+                    <input type="password" name="pwd" id="pwd" value="tolkien6430"  />
+                </div>
+                    <a href="#" data-role="button" onclick="now.SendMail(document.getElementById('from').value,document.getElementById('to').value,document.getElementById('sujet').value,document.getElementById('txt').value,document.getElementById('login').value,document.getElementById('pwd').value); navigator.notification.alert('Message Envoyé');">Envoyer Msg</a>               
+           </div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>App PhoneGap</title>
+         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css" />
+        <script src="http://code.jquery.com/jquery-1.5.min.js" type="text/javascript"></script>
+        <script src="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js"></script>		
+		<link rel="stylesheet" href="css/page.css" type="text/css" />
+		<link rel="stylesheet" href="css/jgauge.css" type="text/css" /> 
+		<script language="javascript" type="text/javascript" src="js/jQueryRotate.min.js"></script> <!-- jQueryRotate plugin used for needle movement. -->
+		<script language="javascript" type="text/javascript" src="js/jgauge-0.3.0.a3.js"></script> <!-- jGauge JavaScript. -->	 
+		<script type="text/javascript" charset="utf-8" src="phonegap.0.9.5.1.js"></script>
+		<script type="text/javascript" charset="utf-8" src="fonction.js"></script>       
+  <!-- <script src="http://88.164.53.59:8000/nowjs/now.js"></script>                     <!--   Serveur Renaud                     -->
+          <script src="http://10.33.171.166:8080/nowjs/now.js"></script>          <!--               Serveur SQLi                    -->
+		<script type="text/javascript" src="jscharts.js"></script>
+        <script type="text/javascript" src="interface.js"></script>      
+   		<script type="text/javascript" src="storage.js"></script>      
+		<script type="text/javascript">    
+		    now.mail;
+            now.pseudo;
+             
+           function onDeviceReady() {
+                        var db = window.openDatabase("Database", "1.0", "PhoneGap Demo", 200000);
+      					db.transaction(populateDB, errorCB);
+      					getInfo();      		
+      					        listGroup();		
+            }
+          
+			now.KPI = function(nb){
+                drawKPI(nb);
+				receiveKPI(nb);
+			};			
+            
+			now.receiveMessage = function(message){
+				 document.getElementById('txtchat').value +=  message +"\n" ;
+			};		
+            
+            now.getMailGroup = function(arraymail){
+                    for(i = 1; i< arraymail.length ; i++){
+                           tabmail.push(arraymail[i]);
+                        }                     
+                };
+             
+         now.getKPIgroup = function(nom,des,mini,maxi,alert,typ){                 
+                desc = des;
+                kpimin = mini;
+                kpimax = maxi;
+                kpialert = alert;
+                type = typ;         
+                menu();    
+             };             
+     
+          function onLoad(){
+               document.addEventListener("deviceready", onDeviceReady, true);    
+       
+            }            
+            now.core.on('disconnect', function(){
+            navigator.notification.alert("disconnect");            
+            });
+		</script>
+	</head>
+	<body onload="onLoad()">
+		<div data-role="page" id="page">
+			<div data-role="header">
+				<h1>Description</h1>
+			</div>
+			<div data-role="content">
+				<div data-role="fieldcontain">
+					<textarea  id = "label"  cols="250" rows="16" id="textarea"></textarea>
+				</div>
+			</div>
+	  
+			<div data-role="header">
+				<h1>Indicateur</h1>
+			</div>
+			<div id="kpi" data-role="content">
+	      
+			</div>
+			<div data-role="content">
+				<label id ="kpitxt" ></label>
+			</div>
+			<div data-role="footer">
+				<h4>Action</h4>
+			</div>
+			<div data-role="content">
+				<ul id="list" data-role="listview">
+					<li><a href="option.html">Options</a></li>
+                    <li><a onclick="getKPI();">Run</a></li>
+                    <li id="addg" ><a onclick="listGroup();" href="LoadKPI.html" >S'abonner à un KPI</a></li>                                           
+		    	</ul>	   
+        	</div>
+        </div>	
+
+	</body>
+</html>

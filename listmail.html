@@ -1,0 +1,47 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>App PhoneGap</title>
+                    <link href="http://code.jquery.com/mobile/1.0a3/jquery.mobile-1.0a3.min.css" rel="stylesheet" type="text/css" />
+		<script src="http://code.jquery.com/jquery-1.5.min.js" type="text/javascript"></script>
+		<link href="http://code.jquery.com/jquery-1.5.min.js" rel="stylesheet" type="text/css" />
+		<script src="http://code.jquery.com/mobile/1.0a3/jquery.mobile-1.0a3.min.js" type="text/javascript"></script>
+        <script src="http://10.33.171.42:8080/nowjs/now.js"></script>
+        <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+
+
+<script>
+
+    
+</script>
+</head>
+  <body>
+        <div id ="div" data-role="page">
+            <div data-role="fieldcontain">
+               <div data-role="header">
+    			<h1>Liste Contact</h1>
+			</div>
+               <ul data-role="listview" data-split-icon="gear" data-split-theme="d" id="box" class="ui-listview">
+                         <script>     
+                            document.getElementById('box').innerHTML = "";
+                              for(i = 0; i< tabmail.length; i ++){
+                                 addCheckBox(tabmail[i],i);
+                              }
+                               
+                              </script>
+               </ul>
+                     	
+                    
+              
+                <a data-role="button" onclick="validList();">Valider</a>
+            </div>
+        </div>
+    
+</body>
+    
+</html>
+
+

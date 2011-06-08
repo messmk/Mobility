@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="http://code.jquery.com/mobile/1.0a3/jquery.mobile-1.0a3.min.css" rel="stylesheet" type="text/css" />
+<script src="http://code.jquery.com/jquery-1.5.min.js" type="text/javascript"></script>
+<link href="http://code.jquery.com/jquery-1.5.min.js" rel="stylesheet" type="text/css" />
+<script src="http://code.jquery.com/mobile/1.0a3/jquery.mobile-1.0a3.min.js" type="text/javascript"></script>
+<script type="text/javascript" charset="utf-8" src="fonction.js"></script>
+<script src="http://10.33.171.42:8080/nowjs/now.js"></script>
+<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+
+</head>
+<body>
+    <div data-role="page" id="page">
+        <div data-role="header" data-backbtn="false">
+        <a onclick="KPIoption();" href="#" class="ui-btn-left ui-btn ui-btn-icon-left ui-btn-corner-all ui-shadow ui-btn-up-a" data-rel="back" data-icon="arrow-l" data-theme="a"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Back</span><span class="ui-icon ui-icon-arrow-l ui-icon-shadow"></span></span></a>
+            <h1>Options</h1>
+        </div>
+        <div data-role="content">
+            <ul id="list" data-role="listview">
+             <div data-role="footer">
+                    <h1 >KPIalert</h1>
+            </div>
+                <div data-role="controlgroup" data-type="horizontal" >
+                    <a data-icon="minus" data-role="button" onclick="kpialertdown()"></a>
+                    <a  data-icon="plus" data-role="button" onclick="kpialertup()"></a>
+                </div>
+                     <div id="kpialert"  data-role="content"></div>                    
+                <div data-role="content">
+                     <script>document.getElementById('kpialert').innerHTML = " <h1> KPI alert " + kpialert + "</h1>";</script>
+                </div>
+                <div data-role="footer"> 
+                     <h1 >KPImin</h1>>
+                </div>
+                 <div data-role="controlgroup" data-type="horizontal" >
+                    <a data-icon="minus" data-role="button" onclick="kpimindown()"></a>
+                    <a data-icon="plus" data-role="button" onclick="kpiminup()"></a>
+                </div>
+                <div data-role="content">
+                    <div id="kpimin"  data-role="content"></div>
+                </div>
+                     <script>document.getElementById('kpimin').innerHTML = " <h1> KPI min " + kpimin + "</h1>";</script>
+                <div data-role="footer">
+                    <h1 >KPImax</h1>
+                </div>
+                <div data-role="controlgroup" data-type="horizontal" >
+                    <a data-icon="minus" data-role="button" onclick="kpimaxdown()"></a>
+                    <a data-icon="plus" data-role="button" onclick="kpimaxup()"></a>
+                </div>
+                <div data-role="content">
+                    <div id="kpimax"  data-role="content"></div>                
+                     <script>document.getElementById('kpimax').innerHTML = " <h1> KPI max " + kpimax + "</h1>";</script>
+                </div>
+            </ul>       
+        </div>
+      
+            <div data-role="fieldcontain">
+             <fieldset data-role="controlgroup">
+              <legend>Choix de l'indicateur</legend>
+              <input type="radio" name="Choix" id="Choix_0" onclick="help();"/>
+              <label for="Choix_0">Barre de Progression</label>
+              <input type="radio" name="Choix" id="Choix_1" onclick="help();"/>
+              <label for="Choix_1">Jauge</label>
+              <input type="radio" name="Choix" id="Choix_2" onclick="help();" />
+              <label for="Choix_2">Graphique</label>
+            </fieldset>
+            
+              <div data-role="fieldcontain">
+                 <div data-role="fieldcontain">
+                    <label for="name">Nom utilisateur :</label>
+                    <input type="text" name="name" id="name" value=""  />
+                </div>    
+                   <div data-role="fieldcontain">
+                    <label for="mail">Adresse E-mail :</label>
+                    <input type="text" name="mail" id="mail" value=""  />
+                </div>
+                <a data-role="button" onclick="save();">Enregistrer</a>
+             </div>
+            </div>
+            
+             
+     
+    </div>
+    
+</body>
+
+</html>
